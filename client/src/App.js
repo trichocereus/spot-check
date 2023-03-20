@@ -15,12 +15,12 @@ const App = () => {
 
     useEffect(() => {
         dispatch(getPosts());
-    }, [dispatch]);
+    }, [currentId, dispatch]);
 
     return (
         <Container maxWidth='lg'>
             <AppBar className={classes.appBar} position='static'>
-                <Typography className={classes.heading} variant='h4' align='center'>Pages of our Book</Typography>
+                <Typography className={classes.heading} variant='h4' align='center'>Public Posts</Typography>
                 <img className={classes.image} src={openbook} alt='openbook' height='60' />
             </AppBar>
             <Grow in>
