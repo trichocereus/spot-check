@@ -21,7 +21,7 @@ const Nav = () => {
 
         setUser(null);
     };
-
+    
     useEffect(() => {
         const token = user?.token;
 
@@ -32,6 +32,7 @@ const Nav = () => {
         }
 
         setUser(JSON.parse(localStorage.getItem('profile')));
+        // eslint-disable-next-line
     }, [location]);
 
     return(
