@@ -16,8 +16,8 @@ const Form = ({ currentId, setCurrentId }) => {
     })
 
     const post = useSelector((state) => currentId ? state.posts.find((p) => p._id === currentId) : null);
-    const classes = useStyles();
     const dispatch = useDispatch();
+    const classes = useStyles();
     const user = JSON.parse(localStorage.getItem('profile'));
 
     useEffect(() => {
@@ -32,11 +32,11 @@ const Form = ({ currentId, setCurrentId }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (currentId !== null) {
-            dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
+        if (currentId === null) {
+            dispatch(createPost({ ...postData, name: user?.result?.name }));
             clear();
         } else {
-            dispatch(createPost({ ...postData, name: user?.result?.name }));
+            dispatch(updatePost(currentId, { ...postData, name: user?.result?.name }));
             clear();
         }
     };
