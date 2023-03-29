@@ -30,8 +30,10 @@ const Auth = () => {
 
         if(isSignup) {
             dispatch(signup(formData, history))
+            history.push('/');
         } else {
             dispatch(signin(formData, history))
+            history.push('/');
         }
     };
 
