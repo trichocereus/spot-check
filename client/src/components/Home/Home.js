@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getPosts } from '../../actions/posts';
 import Posts from '../Posts/Posts';
 import Form from '../Form/Form';
-import classes from '../../styles'
+import classes from '../../styles.js';
 
 const Home = () => {
     const [currentId, setCurrentId] = useState(null);
@@ -13,6 +13,7 @@ const Home = () => {
     useEffect(() => {
         dispatch(getPosts());
     }, [currentId, dispatch]);
+
 
     return (
         <Grow in>
